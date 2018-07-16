@@ -1,12 +1,12 @@
 # 第11章 关联容器
 
-关联容器和顺序容器有着根本的不同：关联容器中的元素时按关键字来保存和访问的。与之相对，顺序容器中的元素是按它们在容器中的位置顺序保存和访问的。
+关联容器和顺序容器有着根本的不同：关联容器中的元素是按关键字来保存和访问的。与之相对，顺序容器中的元素是按它们在容器中的位置顺序保存和访问的。
 
 虽然关联容器的很多行为与顺序容器相同，但其不同之处反映了关键字的作用。
 
 标准库提供了8个关联容器，如表11.1所示。这8个容器间的不同体现在三个维度上：每个容器（1）或者是一个`set`，或者是一个`map`；（2）或者要求不重复的关键字，或者允许重复关键字；（3）按顺序保存元素，或无序保存。允许重复关键字的容器的名字中都包含单词`multi`；不保持关键字按顺序存储的容器的名字都以单词`unordered`开头。因此一个`unordered_multi_set`是一个允许重复关键字，元素无序保存的集合，而一个`set`则是一个要求不重复关键字，有序存储的集合。无序容器使用哈希函数来组织元素。
 
-![](https://github.com/malinkang/Cpp-Primer-Reading-Notes/tree/4a8b787812603ce556bc3ef50a4da8a4488fc213/images/cpp-primer-plus/chapter11/1.png)
+![](.gitbook/assets/1531735053772.jpg)
 
 ## 11.1 使用关联容器
 
@@ -77,6 +77,8 @@ cout << miset.size() << endl; //20
 
 ### 11.2.3 pair
 
+![](.gitbook/assets/a.jpg)
+
 ```cpp
 pair<string,string> anon; //保存两个string
 pair<string,size_t> word_count;
@@ -103,7 +105,9 @@ pair<string,int> process(vector<string> &v)
 
 除了表9.2中列出的类型，关联容器还定义了表11.3中累出的类型。这些类型表示容器关键字和值的类型。
 
-![](https://github.com/malinkang/Cpp-Primer-Reading-Notes/tree/4a8b787812603ce556bc3ef50a4da8a4488fc213/images/cpp-primer-plus/chapter11/3.png)
+![](.gitbook/assets/a%20%281%29.jpg)
+
+
 
 ### 11.3.1 关联容器迭代器
 
