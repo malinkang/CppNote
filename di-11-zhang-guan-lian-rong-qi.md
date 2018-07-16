@@ -77,7 +77,7 @@ cout << miset.size() << endl; //20
 
 ### 11.2.3 pair
 
-![](.gitbook/assets/a.jpg)
+![](.gitbook/assets/a%20%282%29.jpg)
 
 ```cpp
 pair<string,string> anon; //保存两个string
@@ -103,9 +103,9 @@ pair<string,int> process(vector<string> &v)
 
 ## 11.3 关联容器操作
 
-除了表9.2中列出的类型，关联容器还定义了表11.3中累出的类型。这些类型表示容器关键字和值的类型。
+除了表9.2中列出的类型，关联容器还定义了表11.3中列出的类型。这些类型表示容器关键字和值的类型。
 
-![](.gitbook/assets/a%20%281%29.jpg)
+![](.gitbook/assets/a%20%284%29.jpg)
 
 
 
@@ -161,6 +161,8 @@ set2.insert({1,3,5,7,1,3,5,7}); //set2现在有8个元素
 ```
 
 #### 向map添加元素
+
+![](.gitbook/assets/a.jpg)
 
 ```cpp
 //向word_count插入word的4种方法
@@ -236,6 +238,8 @@ auto cnt = authors.erase("Barth,John");
 cout << cnt << endl; //2
 ```
 
+![](.gitbook/assets/a%20%285%29.jpg)
+
 ### 11.3.4 map的下标操作
 
 `map`和`unordered_map`容器提供了下标运算符和一个对应的`at`函数。
@@ -262,6 +266,12 @@ cout << word_count["Anna"] << endl;  //提取元素并打印它；会打印出2
 ```
 
 ### 11.3.5 访问元素
+
+
+
+![](.gitbook/assets/a.txt)
+
+![](.gitbook/assets/b.txt)
 
 #### 对map使用find代替下标操作
 
@@ -314,6 +324,8 @@ for ( const auto &w: word_count){
 对于相同的参数，哈希函数必须总是产生相同的结果。理想情况下，哈希函数还能将每个特定的值映射到唯一的桶。但是，将不同关键字的元素映射到相同的桶也是允许的。当一个桶保存多个元素时，需要顺序搜索这些元素来查找我们想要的那个。计算一个元素的哈希值和桶中搜索通常都是很快的操作。但是，如果一个桶中保存了很多元素，那么查找一个特定元素就需要大量比较操作。
 
 无序容器提供了一组管理桶的函数，例如11.8所示。这些成员函数允许我们查询容器的状态以及在必要时强制容器进行重组。
+
+![](.gitbook/assets/a%20%282%29.txt)
 
 #### 无序容器对关键字类型的要求
 
