@@ -1,13 +1,3 @@
----
-title: 《C++ Primer》读书笔记 第9章 顺序容器
-date: 2016-05-23 15:37:30
-tags:
----
-
-### 目录
-
-<!-- toc -->
-
 ### 9.1 顺序容器概述
 
 ![image.png](https://upload-images.jianshu.io/upload_images/25383-224c085f3c81ed7e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)

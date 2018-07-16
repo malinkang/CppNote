@@ -1,10 +1,3 @@
----
-title: 《C++ Primer》读书笔记 第1章 开始
-date: 2016-03-29 14:08:52
-tags:
----
-
-
 ### 1.2输入输出
 
 C++的`iostream`库来提供输入和输出。`iostream`包含`istream`和`ostream`两个类，分别代表输入流和输出流。
