@@ -1,18 +1,17 @@
 # 第1章 开始
 
-## 1.2输入输出
+## 1.2 输入输出
 
 C++的`iostream`库来提供输入和输出。`iostream`包含`istream`和`ostream`两个类，分别代表输入流和输出流。 标注库定义了4个io**对象**。为了处理输入，我们使用一个名为`cin`的`istream`对象。这个对象被称为**标准输入**。对于输出，我们使用一个名为`cout`的`ostream`类型的对象。此对象也被称为标准输出。标准库还定义了其他两个`ostream`对象，名为`cerr`和`clog`。通常用`cerr`来输出警告和错误信息，因此也被称为标准错误。而`clog`用来输出程序运行时的一般性信息。
 
 ```cpp
-#include "stdafx.h"
 #include <iostream>
 int main()
 {    
     std::cout << "enter tow numbers" << std::endl;
     int v1 = 0, v2 = 0;
     std::cin >> v1 >> v2;
-    std::cout << "the sum of " << v1 << "and" << v2 << "is" << v1 + v2 << std::endl;
+    std::cout << "the sum of " << v1 << " and " << v2 << " is " << v1 + v2 << std::endl;
     return 0;
 }
 ```
@@ -25,13 +24,13 @@ int main()
 
 `>>`是输入运算符，同样接受两个运算对象：左侧运算对象是一个`istream`对象，右侧是一个对象。此运算符从给定的`istream`读取数据，并存入给定对象中。输入运算符的**计算结果**就是给定的`istream`对象。
 
-## 1.3注释
+## 1.3 注释
 
 单行注释以双斜线（//）开始，以换行符结束。 多行注释以`/*`开始以`*/`结束。
 
-## 1.4控制流
+## 1.4 控制流
 
-### 1.4.1While语句
+### 1.4.1 While语句
 
 ```cpp
 #include "stdafx.h"
@@ -49,7 +48,7 @@ int main()
 }
 ```
 
-## 1.4.2for循环
+## 1.4.2 for循环
 
 ```cpp
 #include "stdafx.h"
