@@ -27,7 +27,8 @@ int main()
 #include <iostream>
 
 using std::cin;
-using std::cout;using std::endl;
+using std::cout;
+using std::endl;
 int main()
 {
     cout << "Enter two numbers:" << endl;
@@ -48,41 +49,23 @@ int main()
 ### 3.2.1 定义和初始化string对象
 
 ```cpp
-#include <iostream>
-#include <string>
-using std::string;
-using std::cout;
-using std::endl;
-int main()
-{
-    string s1;
-    string s2 = s1;
-    string s3 = "hiya";
-    string s4(10,'c');
-    cout << "s4 = " << s4 << endl; //s4 = cccccccccc
-    return 0;
-}
+string s1;
+string s2 = s1;
+string s3 = "hiya";
+string s4(10,'c');
+cout << "s4 = " << s4 << endl; //s4 = cccccccccc
 ```
 
 #### 直接初始化和拷贝初始化
 
-如果使用等号初始化一个变量，实际上执行的是拷贝初始化，与之相反，如果不适用等号，则执行的是直接初始化。
+如果使用等号初始化一个变量，实际上执行的是拷贝初始化，与之相反，如果不使用等号，则执行的是直接初始化。
 
 ```cpp
-#include <iostream>
-#include <string>
-using std::string;
-using std::cout;
-using std::endl;
-int main()
-{   
-    string s5 = "hiya";
-    string s6("hiya");
-    string s7(10,'c');
-    string s8 = string(10,'c');//拷贝初始化处理多值
-    cout << "s8 = " << s8 << endl; //s8 = cccccccccc
-
-}
+string s5 = "hiya";
+string s6("hiya");
+string s7(10,'c');
+string s8 = string(10,'c');//拷贝初始化处理多值
+cout << "s8 = " << s8 << endl; //s8 = cccccccccc
 ```
 
 ### 3.2.2 string对象上的操作
@@ -803,6 +786,9 @@ int main()
     return 0;
 }
 ```
+默认情况下，类型修饰符从右向左依次绑定。对于`ptrs`来说，从右向左理解其含义比较简单：首先知道我们定义的是一个大小为10的数组，它的名字是`ptrs`，然后知道数组中存放的是指向`int`的指针。
+
+但是对于`Parray`来说，从右向左理解就不太合理了。因为数组的纬度是紧跟着被声明的名字的，所以就数组而言，由内向外阅读比从右向左好多了。由内向外的顺序可帮助我们更好地理解`Parray`的含义：首先是圆括号括起来的部分。`*Parray`意味着`Parray`是个指针，接下来观察右边，可知道`Parray`是个指向大小为10的数组的指针，最后观察左边，知道数组中的元素时int数组，数组中包含10个元素。同理，（&arrRef）表示arrRef是一个引用，它引用的对象是一个大小为10的数组，数组中元素的类型是int。
 
 ### 3.5.2 访问数组元素
 
