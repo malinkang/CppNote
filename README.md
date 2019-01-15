@@ -1,6 +1,8 @@
 # Introduction
 
-[C++ Primer 中文版（第 5 版）读书笔记](https://book.douban.com/subject/25708312/)
+* [C++书单](https://www.douban.com/doulist/46829387/)
 
-* [练习答案](https://github.com/Mooophy/Cpp-Primer)
+* [C++ Primer源码](http://www.informit.com/store/c-plus-plus-primer-9780321714114)
+
+* [C++ Primer练习答案](https://github.com/Mooophy/Cpp-Primer)
 

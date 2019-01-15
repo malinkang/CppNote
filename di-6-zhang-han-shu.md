@@ -160,6 +160,7 @@ i = 0
 
 ### 6.2.3 const形参和实参
 
+
 #### 指针或引用形参与const
 
 #### 尽量使用常量引用
@@ -181,6 +182,31 @@ i = 0
 ### 6.2.5 main：处理命令行选项
 
 ### 6.2.6 含有可变形参的函数
+
+为了编写能处理不同数量实参的函数，`C++11`新标准提供了两种主要方法：如果所有的实参类型相同，可以传递一个名为`initializer_list`的标准库类型；如果实参的类型不同，我们可以编写一种特殊的函数，也就是所谓的可变参数模版。
+
+#### initializer_list形参
+
+
+```cpp
+void error_msg(std::initializer_list<string> il)
+{
+    for (auto beg = il.begin();beg!=il.end();++beg)
+        cout << *beg << " ";
+    cout << endl;
+}
+```
+
+```cpp
+string expected;
+string actual;
+if(expected != actual)
+    error_msg({"functionX",expected,actual});
+else 
+    error_msg({"functionX","okay"});
+```
+
+
 
 #### 省略符形参
 
@@ -334,6 +360,19 @@ arrT* func(int i); //func返回一个指向含有10个整数的数组的指针
 ## 6.5 特殊用途语言特性
 
 ### 6.5.1 默认实参
+
+```cpp
+typedef string::size_type sz;
+string screen(sz ht = 24,sz wid = 80 ,char background=' ');
+```
+
+```cpp
+string window;
+window = screen();
+window = screen(66);
+window = screen(66,256);
+window = screen(66,256,'#');
+```
 
 #### 使用默认实参调用函数
 

@@ -556,5 +556,25 @@ int main()
 
 ### 2.6.3 编写自己的头文件
 
+为了确保各个文件中类的定义一致，类通常被定义在头文件中，而且类所在头文件的名字应与类的名字一样。例如，库类型`string`在名为`string`的头文件中定义。
+
+头文件通常包含那些只能被定义一次的实体，如类、`const`和`constexpr`变量等。头文件也经常用到其他头文件的功能。例如，我们的`Sales_data`类包含有一个`string`成员，所以`Sales_data.h`必须包含`string.h`头文件。同时，使用`Sales_data`类的程序为了能操作`bookNo`成员需要再一次包含`string.h`头文件。这样，事实上使用`Sales_data`类的程序就先后两次包含了`string.h`头文件：一次是直接包含的，另有一次是随着包含`Sales_data.h`被隐式地包含进来的。有必要在书写头文件时做适当处理，使其遇到多次包含的情况也能安全和正常地工作。
+
 #### 预处理器概述
 
+确保头文件多次包含仍能安全工作的常用技术是`预处理器（preprocessor）`，预处理器是在编译之前执行的一段程序，可以部分地改变我们所写的程序。之前已经用到了一项预处理功能`#include`，当预处理器看到`#include`标记时就会用指定的头文件的内容替代`#include`。
+
+`C++`程序还会用到的一项预处理功能是`头文件保护符（header guard）`，头文件保护符依赖于预处理变量。预处理变量有两种状态：已定义和未定义。`#define`指令把一个名字设定为预处理变量，另外两个指令则分别检查某个指定的预处理变量，另外两个指令则分别检查某个指定的预处理变量是否已经定义：`#ifdef`当且仅当变量已定义时为真，`#ifndef`当且晋档变量为定义时为真。一旦检查结果为真，则执行后续操作直至遇到`#endif`指令为止。
+
+```cpp
+#ifndef SALES_DATA_h
+#define SALES_DATA_H
+#include <string>
+struct Sales_data {
+    std::string bookNo;
+    unsigned units_sold = 0;
+    double revenue = 0.0;
+};
+#endif
+```
+第一次包含`Sales_data.h`时，`#ifndef`的检查结果为真，预处理器将顺序执行后面的操作直至遇到`#endif`为止。此时，预处理变量`SALES_DATA_H`的值变为已定义，而且`Sales_data.h`也会被拷贝到我们的程序中来。后面如果再一次包含`Sales_data.h`，则`ifndef`的检查结果将为假，编译器将忽略`#ifdef`到`#endif`之间的部分。
