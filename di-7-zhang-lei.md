@@ -34,21 +34,24 @@ int main()
 
 ### 7.1.2 定义改进的Sales\_data类
 
+定义和声明成员函数的方式与普通函数差不多。成员函数的声明必须在类的内部，它的定义既可以在类的内部也可以在类的外部。作为接口组成部分的非成员函数，它们的定义和声明在类的外部。
+
 ```cpp
 struct Sales_data
 {
-    //新成员：关于Sales_data对象的操作
-    std::string isbn() const {return bookNo;}
-    Sales_data& combine(const Sales_data&);
+    std::string isbn() const {return bookNo;} //一个isbn成员函数，用户返回对象的ISBN编码
+    Sales_data& combine(const Sales_data&); //用于将一个Sales_data对象加到另一个对象上
     double avg_price() const;// 成员函数用于返回售出书籍的平均价格
-    //数据成员和2.6.1节相比没有改变
     std::string bookNo; //编号
     unsigned units_sold = 0; //销量
     double revenue = 0.0; //收入
 };
+//add函数，执行两个Sales_data的加法
 Sales_data add(const Sales_data&,const Sales_data&);
+//print函数，将Sales_data对象的值输出到ostream
 std::ostream &print(std::ostream&,const Sales_data&);
-std::istream &read(std::istream&,Sales_data&);
+//read函数，将数据从istream读入到Sales_data对象中
+std::istream &read(std::istream&,Sales_data&); 
 ```
 
 #### 定义成员函数

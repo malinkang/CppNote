@@ -10,7 +10,7 @@
 
 ## 11.1 使用关联容器
 
-### 使用map
+#### 使用map
 
 一个经典的使用关联数组的例子是单词计数程序：
 
@@ -23,7 +23,7 @@ for (const auto &w : word_count) //对map中的每个元素打印结果
     cout << w.first << " occurs " << w.second << ((w.second>1)?" times":" time") << endl;
 ```
 
-### 使用set
+#### 使用set
 
 上一个示例程序的一个合理扩展是：忽略常见单词，如“the”、“and”、“or”等。我们可以使用`set`保存想忽略的单词，只对不在集合中的单词统计出现次数：
 
