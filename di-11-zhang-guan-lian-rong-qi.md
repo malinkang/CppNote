@@ -6,7 +6,7 @@
 
 标准库提供了8个关联容器，如表11.1所示。这8个容器间的不同体现在三个维度上：每个容器（1）或者是一个`set`，或者是一个`map`；（2）或者要求不重复的关键字，或者允许重复关键字；（3）按顺序保存元素，或无序保存。允许重复关键字的容器的名字中都包含单词`multi`；不保持关键字按顺序存储的容器的名字都以单词`unordered`开头。因此一个`unordered_multi_set`是一个允许重复关键字，元素无序保存的集合，而一个`set`则是一个要求不重复关键字，有序存储的集合。无序容器使用哈希函数来组织元素。
 
-![](.gitbook/assets/1531735053772.jpg)
+![](.gitbook/assets/table-11.1.jpg)
 
 ## 11.1 使用关联容器
 
@@ -77,7 +77,7 @@ cout << miset.size() << endl; //20
 
 ### 11.2.3 pair
 
-![](.gitbook/assets/a%20%282%29.jpg)
+
 
 ```cpp
 pair<string,string> anon; //保存两个string
@@ -87,7 +87,7 @@ pair<string,string> author{"James","Joyce"};
 cout << author.first << " " << author.second << endl;
 ```
 
-![](https://github.com/malinkang/Cpp-Primer-Reading-Notes/tree/4a8b787812603ce556bc3ef50a4da8a4488fc213/images/cpp-primer-plus/chapter11/2.png)
+![](.gitbook/assets/table-11.2.png)
 
 #### 创建pair对象的函数
 
@@ -105,7 +105,7 @@ pair<string,int> process(vector<string> &v)
 
 除了表9.2中列出的类型，关联容器还定义了表11.3中列出的类型。这些类型表示容器关键字和值的类型。
 
-![](.gitbook/assets/a%20%284%29.jpg)
+![](.gitbook/assets/table-11.3.png)
 
 
 
@@ -162,8 +162,6 @@ set2.insert({1,3,5,7,1,3,5,7}); //set2现在有8个元素
 
 #### 向map添加元素
 
-![](.gitbook/assets/a.jpg)
-
 ```cpp
 //向word_count插入word的4种方法
 word_count.insert({word,1});
@@ -171,6 +169,7 @@ word_count.insert(make_pair(word,1));
 word_count.insert(pair<string,size_t>(word,1))
 word_count.insert(map<string,size_t>::value_type(word,1));
 ```
+![](.gitbook/assets/table-11.4.png)
 
 #### 检测insert的返回值
 
@@ -269,9 +268,9 @@ cout << word_count["Anna"] << endl;  //提取元素并打印它；会打印出2
 
 
 
-![](.gitbook/assets/a.txt)
+![](.gitbook/assets/table-11.7-1.png)
 
-![](.gitbook/assets/b.txt)
+![](.gitbook/assets/table-11.7-2.png)
 
 #### 对map使用find代替下标操作
 
@@ -325,7 +324,7 @@ for ( const auto &w: word_count){
 
 无序容器提供了一组管理桶的函数，例如11.8所示。这些成员函数允许我们查询容器的状态以及在必要时强制容器进行重组。
 
-![](.gitbook/assets/a%20%282%29.txt)
+![](.gitbook/assets/table-11.8.png)
 
 #### 无序容器对关键字类型的要求
 
