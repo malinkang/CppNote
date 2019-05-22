@@ -51,7 +51,7 @@ Sales_data add(const Sales_data&,const Sales_data&);
 //print函数，将Sales_data对象的值输出到ostream
 std::ostream &print(std::ostream&,const Sales_data&);
 //read函数，将数据从istream读入到Sales_data对象中
-std::istream &read(std::istream&,Sales_data&); 
+std::istream &read(std::istream&,Sales_data&);
 ```
 
 #### 定义成员函数
@@ -186,6 +186,7 @@ Sales_data::Sales_data(std::istream &is)
 ### 7.1.5 拷贝、赋值和析构
 
 除了定义类的对象如何初始化之外，类还需要控制拷贝、赋值和销毁对象时发生的行为。
+
 #### 某些类不能依赖于合成的版本
 
 ## 7.2 访问控制与封装

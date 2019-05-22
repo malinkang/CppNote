@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
+* [C++学习资源整理](README.md)
 * [第1章 开始](di-1-zhang-kai-shi.md)
 * [第2章 变量和基本类型](di-2-zhang-bian-liang-he-ji-ben-lei-xing.md)
 * [第3章 字符串、向量和数组](di-3-zhang-zi-fu-chuan-xiang-liang-he-shu-zu.md)

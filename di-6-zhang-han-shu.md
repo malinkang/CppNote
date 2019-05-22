@@ -2,9 +2,10 @@
 
 ## 6.1 函数基础
 
-我们通过**调用运算符（call operator)**来执行函数。调用运算符的形式是一对圆括号，它作用于一个表达式，该表达式是函数或者指向函数的指针；圆括号之内是一个用逗号隔开的**实参（argument）**列表。
+我们通过**调用运算符（call operator\)**来执行函数。调用运算符的形式是一对圆括号，它作用于一个表达式，该表达式是函数或者指向函数的指针；圆括号之内是一个用逗号隔开的**实参（argument）**列表。
 
 **编写函数：**
+
 ```cpp
 int fact(int val)
 {
@@ -14,6 +15,7 @@ int fact(int val)
     return ret;
 }
 ```
+
 **调用函数**
 
 ```cpp
@@ -160,7 +162,6 @@ i = 0
 
 ### 6.2.3 const形参和实参
 
-
 #### 指针或引用形参与const
 
 #### 尽量使用常量引用
@@ -185,8 +186,7 @@ i = 0
 
 为了编写能处理不同数量实参的函数，`C++11`新标准提供了两种主要方法：如果所有的实参类型相同，可以传递一个名为`initializer_list`的标准库类型；如果实参的类型不同，我们可以编写一种特殊的函数，也就是所谓的可变参数模版。
 
-#### initializer_list形参
-
+#### initializer\_list形参
 
 ```cpp
 void error_msg(std::initializer_list<string> il)
@@ -205,8 +205,6 @@ if(expected != actual)
 else 
     error_msg({"functionX","okay"});
 ```
-
-
 
 #### 省略符形参
 

@@ -1,6 +1,5 @@
 # 第15章 面向对象程序设计
 
-
 ## 15.1 OOP：概述
 
 `面向对象程序设计（object-orented programming)`的核心思想是数据抽象、继承和动态绑定。通过使用数据抽象，我们可以将类的接口与实现分离；使用继承，可以定义相似的类型并对其相似关系建模：使用动态绑定，可以在一定程度上忽略相似类型的区别，而以统一的方式使用它们的对象。
@@ -18,6 +17,7 @@ public:
     virtual double net_price(std::size_t n)const;
 };
 ```
+
 派生类必须通过使用`类派生列表（class derivation list）`明确指出它是从哪个基类继承而来的。类派生列表的形式是：首先是一个冒号，后面紧跟以逗号分隔的基类列表，其中每个基类前面可以有访问说明符：
 
 ```cpp
@@ -26,6 +26,7 @@ public:
     double net_price(std::size_t) const override;
 };
 ```
+
 因为`Bulk_quote`在它的派生列表中使用`public`关键字，因此我们完全可以把`Bulk_quote`的对象当成`Quote`的对象来使用。
 
 派生类必须在其内部对所有重新定义的虚函数进行声明。派生类可以在这样的函数之前加上`virtual`关键字，但是并不是非得这么做。`C++11`新标准允许派生类显式地注明它将使用哪个成员函数改写基类的虚函数，具体措施是在该函数的形参列表之后增加一个`override`关键字。
@@ -48,6 +49,7 @@ double print_total(ostream &os,const Quote &item,size_t n)
 print_total(cout,basic,20);
 print_total(cout,bulk,20);
 ```
+
 第一条调用句`Quote`对象传入`print_total`，因此当`print_total`调用`net_price`时，执行的是`Quote`的版本；在第二条调用语句中，实参的类型是`Bulk_quote`,因此执行的是`Bulk_quote`的版本。因为在上述过程中函数的运行版本由实参决定，即在运行时选择函数的版本，所以动态绑定有时又被称为`运行时绑定（run-time binding）`。
 
 ## 15.2 定义基类和派生类
@@ -104,6 +106,7 @@ Quote *p = &item;//p指向Quote对象
 p = &bulk; //p指向bulk的Quote部分
 Quote &r = bulk;//r绑定到bulk的Quote部分
 ```
+
 这种转换通常称为`派生类到基类（derived-to-base）`的类型转换。
 
 #### 派生类构造函数
@@ -128,6 +131,7 @@ double Bulk_quote::net_price(size_t cnt)const
 #### 继承与静态成员
 
 如果基类定义了一个静态成员，则在整个继承体系中只存在该成员的唯一定义。不论从基类中派生出来多少个派生类，对于每个静态成员来说都只存在唯一的实例。
+
 ```cpp
 class Base {
 public:
@@ -167,6 +171,7 @@ class Quote; //声明但未定义
 //错误：Quote必须被定义
 class Bulk_quote:public Quote{...};
 ```
+
 一个类是基类，同时它也可以是一个派生类：
 
 ```cpp
@@ -174,6 +179,7 @@ class Base {/*...*/};
 class D1:public Base {/*...*/};
 class D2:public D1{/*...*/};
 ```
+
 在这个继承关系中，`Base`是`D1`的`直接基类（direct base)`，同时是`D2`的`间接基类（indirect base)`。
 
 #### 防止继承的发生
@@ -240,9 +246,7 @@ protected:
 
 含有纯虚函数的类是`抽象基类（abstract base class）`。
 
-
 #### 派生类构造函数只初始化它的直接基类
-
 
 ## 15.5 访问控制与继承
 
@@ -286,6 +290,7 @@ struct Priv_Derv:private Base{
     int f() {return prot_mem;}
 }
 ```
+
 派生访问说明符对于派生类的成员能否访问其直接基类的成员没什么影响。
 
 派生访问说明符的目的是控制派生类用户（包括派生类的派生类在内）对于基类成员的访问权限：
@@ -296,6 +301,7 @@ Priv_Derv d2;//继承自Base的成员是private的
 d1.pub_mem();//正确：pub_mem在派生类中是public的
 d2.pub_mem();//错误：pub_mem在派生类中是private的
 ```
+
 派生访问说明符还可以继承自派生类的新类的访问权限：
 
 ```cpp
@@ -327,6 +333,7 @@ public:
     int f3(Sneaky s) {return s.prot_mem;}//正确：Pal是Base的友元 
 }
 ```
+
 当一个类将另一个类声明为友元时，这种友元关系只对做出声明的类有效。对于原来那个类来说，其友元的基类或者派生类不具有特殊的访问能力：
 
 ```cpp
@@ -337,6 +344,7 @@ public:
         {retuurn b.prot_mem;} //友元关系不能继承
 }
 ```
+
 #### 改变个别成员的可访问性
 
 有时我们需要改变派生类继承的某个名字的访问级别，通过使用`using`声明可以达到这一目的：
@@ -366,8 +374,8 @@ protected:
 
 Derived d(42);
 cout << d.get_mem() << endl;//打印42
-
 ```
+
 #### 通过作用域运算符来使用隐藏的成员
 
 ```cpp
@@ -405,3 +413,4 @@ struct Derived:Base{
 ## 15.8 容器与继承
 
 ## 15.9 文本查询程序再探
+

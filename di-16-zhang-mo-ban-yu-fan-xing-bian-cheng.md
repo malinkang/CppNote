@@ -1,7 +1,5 @@
 # 第16章 模版与泛型编程
 
-
-
 ## 16.1 定义模版
 
 ### 16.1.1 函数模版
@@ -57,7 +55,6 @@ int compare(const char (&p1)[N],const char (&p2)[M])
     return strcmp(p1,p2);
 }
 cout << compare("hi","mom") << endl; //-5
-
 ```
 
 #### inline和constexpr的函数模版
@@ -67,3 +64,4 @@ cout << compare("hi","mom") << endl; //-5
 #### 模版编译
 
 #### 大多数编译错误在实例化期间报告
+

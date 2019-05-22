@@ -77,8 +77,6 @@ cout << miset.size() << endl; //20
 
 ### 11.2.3 pair
 
-
-
 ```cpp
 pair<string,string> anon; //保存两个string
 pair<string,size_t> word_count;
@@ -106,8 +104,6 @@ pair<string,int> process(vector<string> &v)
 除了表9.2中列出的类型，关联容器还定义了表11.3中列出的类型。这些类型表示容器关键字和值的类型。
 
 ![](.gitbook/assets/table-11.3.png)
-
-
 
 ### 11.3.1 关联容器迭代器
 
@@ -169,6 +165,7 @@ word_count.insert(make_pair(word,1));
 word_count.insert(pair<string,size_t>(word,1))
 word_count.insert(map<string,size_t>::value_type(word,1));
 ```
+
 ![](.gitbook/assets/table-11.4.png)
 
 #### 检测insert的返回值
@@ -237,7 +234,7 @@ auto cnt = authors.erase("Barth,John");
 cout << cnt << endl; //2
 ```
 
-![](.gitbook/assets/a%20%285%29.jpg)
+![](https://github.com/malinkang/CppNote/tree/5326d3ebebfe1af6a6a12f0e2b7d914c484c519a/.gitbook/assets/a%20%285%29.jpg)
 
 ### 11.3.4 map的下标操作
 
@@ -265,8 +262,6 @@ cout << word_count["Anna"] << endl;  //提取元素并打印它；会打印出2
 ```
 
 ### 11.3.5 访问元素
-
-
 
 ![](.gitbook/assets/table-11.7-1.png)
 
@@ -324,7 +319,7 @@ for ( const auto &w: word_count){
 
 无序容器提供了一组管理桶的函数，例如11.8所示。这些成员函数允许我们查询容器的状态以及在必要时强制容器进行重组。
 
-![](.gitbook/assets/table-11.8.png)
+![](https://github.com/malinkang/CppNote/tree/5326d3ebebfe1af6a6a12f0e2b7d914c484c519a/.gitbook/assets/table-11.8.png)
 
 #### 无序容器对关键字类型的要求
 

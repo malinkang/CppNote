@@ -1,16 +1,16 @@
 # 第14章 操作重载与类型转换
 
-
 当运算符作用于类类型的运算对象时，可以通过运算符重载重新定义该运算符的含义。明智地使用运算符重载能令我们的程序更易于编写和阅读。举个例子，因为在`Sales_item`类中定义了输入、输出和加法运算符，所以可以通过下述形式输出两个`Sales_item`的和：
 
 ```cpp
 cout << item1 + item2;
 ```
+
 相反的，由于我们的`Sales_data`类还没有重载这些运算符，因此它的加法代码显得比较冗长而不清晰：
+
 ```cpp
 print(cout,add(data1,data2));
 ```
-
 
 ## 14.1 基本概念
 
@@ -24,9 +24,8 @@ print(cout,add(data1,data2));
 //错误：不能为int冲定义内置的运算符
 int operator+(int,int)
 ```
+
 我们只能重载已有的运算符，而无权发明新的运算符号。例如，我们不能提供`operator**`来执行幂操作。
-
-
 
 #### 直接调用一个重载的运算符函数
 
@@ -37,12 +36,14 @@ int operator+(int,int)
 data1 + data2; //普通的表达式
 operator+(data1,data2); //等价的函数调用
 ```
+
 我们像调用其他成员函数一样调用成员运算符函数。
 
 ```cpp
 data1 += data2; //基于“调用”的表达式
 data1.operator+=(data2);//对成员运算符函数的等价调用
 ```
+
 #### 某些运算符不应该被重载
 
 #### 使用与内置类型一致的含义
@@ -53,26 +54,26 @@ data1.operator+=(data2);//对成员运算符函数的等价调用
 
 ## 14.2 输入和输出运算符
 
-### 14.2.1 重载输出运算符<<
+### 14.2.1 重载输出运算符&lt;&lt;
 
 ```cpp
 std::ostream &operator<<(std::ostream &os,const Sales_data &item)
 {
-	os << item.isbn() << " " << item.units_sold << " "
-		<< item.revenue << " " << item.avg_price();
-	return os;
+    os << item.isbn() << " " << item.units_sold << " "
+        << item.revenue << " " << item.avg_price();
+    return os;
 }
 ```
 
-### 14.2.2 重载输入运算符>>
+### 14.2.2 重载输入运算符&gt;&gt;
 
 ```cpp
 std::istream &operator>>(std::istream &is,Sales_data &item)
 {
-	double price = 0;
-	is >> item.bookNo >> item.units_sold >> price;
-	item.revenue = price * item.units_sold;
-	return is;
+    double price = 0;
+    is >> item.bookNo >> item.units_sold >> price;
+    item.revenue = price * item.units_sold;
+    return is;
 }
 ```
 
@@ -83,13 +84,13 @@ std::istream &operator>>(std::istream &is,Sales_data &item)
 ```cpp
 bool operator==(const Sales_data &lhs,const Sales_data &rhs)
 {
-	return lhs.isbn() == rhs.isbn() &&
-			lhs.units_sold == rhs.units_sold && 
-			lhs.revenue == rhs.revenue;
+    return lhs.isbn() == rhs.isbn() &&
+            lhs.units_sold == rhs.units_sold && 
+            lhs.revenue == rhs.revenue;
 }
 bool operator!=(const Sales_data &lhs,const Sales_data &rhs)
 {
-	return !(lhs==rhs);
+    return !(lhs==rhs);
 }
 ```
 
@@ -118,3 +119,4 @@ bool operator!=(const Sales_data &lhs,const Sales_data &rhs)
 ### 14.9.2 避免有二义性的类型转换
 
 ### 14.9.3 函数匹配与重载运算符
+
