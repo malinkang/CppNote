@@ -4,7 +4,7 @@
 
 为了支持不同种类的IO处理操作，在`istream`和`ostream`之外，标准库还定义了其他一些`IO`类型。分别定义在三个独立的头文件中：`iostream`定义了用于读写流的基本类型，`fstream`定义了读写命名文件的类型，`sstream`定义了读写内存`string`对象的类型。
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-20dd96ec7a5b19f1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-8.1.png)
 
 #### IO类型间的关系
 
@@ -14,9 +14,9 @@
 
 下表列出了IO类所定义的一些函数和标志，可以帮助我们访问和操纵流的`条件状态（condition state）`。
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-f313eca418bf29e3.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-8.2-1.png)
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-c74ff298a3d435df.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-8.2-2.png)
 
 #### 查询流的状态
 
@@ -32,7 +32,7 @@
 
 ## 8.2 文件输入输出
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-a754287dd119b47e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-8.3.png)
 
 ### 8.2.1 使用文件流对象
 
@@ -78,7 +78,7 @@ int main(int argc,char *argv[])
 
 ## 8.3 string流
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-2f289897334d9517.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-8.4.png)
 
 ### 8.3.1 使用istringstream
 

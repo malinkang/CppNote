@@ -234,7 +234,7 @@ auto cnt = authors.erase("Barth,John");
 cout << cnt << endl; //2
 ```
 
-![](https://github.com/malinkang/CppNote/tree/5326d3ebebfe1af6a6a12f0e2b7d914c484c519a/.gitbook/assets/a%20%285%29.jpg)
+![](.gitbook/assets/table-11.5.png)
 
 ### 11.3.4 map的下标操作
 

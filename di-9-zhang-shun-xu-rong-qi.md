@@ -2,7 +2,8 @@
 
 ## 9.1 顺序容器概述
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-224c085f3c81ed7e.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.1.png)
+
 
 #### 确定使用哪种顺序容器
 
@@ -24,7 +25,7 @@
 
 ### 9.2.4 容器定义和初始化
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-326156b551f03cfd.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.3.png)
 
 #### 将一个容器初始化为另一个容器的拷贝
 
@@ -162,7 +163,7 @@ v1 == v2; //false v2元素数目比v1少
 
 ### 9.3.1 向顺序容器添加元素
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-5f105285dccfc594.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.5.png)
 
 #### 使用push\_back
 
@@ -231,7 +232,7 @@ cout << svec.at(0); //抛出一个 auto_of_range异常
 
 ### 9.3.3 删除元素
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-7313e31b285cc1e1.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.7.png)
 
 #### pop\_front和pop\_back成员函数
 
@@ -272,7 +273,7 @@ slist.erase(slist.begin(),slist.end()); //等价调用
 
 由于这些操作与其他容器上的操作的实现方式不同，`forward_list`并未定义`insert`、`emplace`和`erase`，而是定义了名为`insert_after`、`emplace_after`和`erase_after`的操作。`forward_list`也定义了`before_begin`，它返回一个`首前（off-the-beginning）`迭代器。
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-780be3e84321b423.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.8.png)
 
 ```cpp
 forward_list<int> flst = {0,1,2,3,4,5,6,7,8,9};
@@ -328,7 +329,7 @@ while (iter != vi.end()){
 
 #### 管理容量的成员函数
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-baf686e54ffdd792.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.10.png)
 
 #### capacity和size
 
@@ -411,7 +412,7 @@ ivec: size: 51 capacity: 51
 
 ### 9.5.1 构造string的其他方法
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-4ada8b90e78fd00f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.11.png)
 
 ```cpp
 const char *cp = "Hello World!!!"; //以空字符结束的数组
@@ -516,7 +517,7 @@ string s = to_string(i); //将整数i转换为字符表示形式
 double d = stod(s);  //将字符串s转换为浮点数
 ```
 
-![image.png](https://upload-images.jianshu.io/upload_images/25383-735a39fbee8b573b.png?imageMogr2/auto-orient/strip|imageView2/2/w/1240)
+![](.gitbook/assets/table-9.16.png)
 
 ## 9.6 容器适配器
 
